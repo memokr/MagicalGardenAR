@@ -6,3 +6,25 @@
 //
 
 import Foundation
+
+@Observable
+class Models {
+    var plants: [PlantModel] = []
+    
+    init() {
+        
+        // Growing Plants
+        let growOne = PlantModel(name: "Plant_01_Growth+Bloom", placeholder: "Plant01", sound: "SFX_4" )
+        let growTwo = PlantModel(name: "Plant_02_Growth+Bloom", placeholder: "Plant02", sound: "SFX_5")
+        let growThree = PlantModel(name: "Plant_03_Growth+Bloom", placeholder: "Plant03", sound: "SFX_7")
+        
+        self.plants += [growOne,growTwo,growThree]
+    }
+    
+    func clearModelEntitiesFromMemory(){
+        for plant in plants {
+            plant.modelEntity = nil
+        }
+    }
+}
+

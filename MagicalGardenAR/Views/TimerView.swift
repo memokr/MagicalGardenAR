@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-struct TimerView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    TimerView()
-}
+//struct TimerView: View {
+//    @State private var remainingSeconds: Int
+//    
+//    init(remainingSeconds: Int) {
+//        self._remainingSeconds = State(initialValue: remainingSeconds)
+//    }
+//    
+//    var body: some View {
+//        Text("\(remainingSeconds)")
+//            .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+//                if remainingSeconds > 0 {
+//                    remainingSeconds -= 1
+//                }
+//            }
+//    }
+//}

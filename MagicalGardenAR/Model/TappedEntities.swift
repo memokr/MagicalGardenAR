@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+class TappedEntitiesManager {
+    static let shared = TappedEntitiesManager()
+    private init() {}
+
+    var tappedEntities: Set<String> = []
+}

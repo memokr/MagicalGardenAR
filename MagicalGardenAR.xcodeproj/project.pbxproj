@@ -7,18 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1039FB202BFBA67A00EDBC1F /* SFX_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB1B2BFBA67900EDBC1F /* SFX_2.wav */; };
+		1039FB212BFBA67A00EDBC1F /* SFX_5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB1C2BFBA67900EDBC1F /* SFX_5.wav */; };
+		1039FB222BFBA67A00EDBC1F /* Music.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB1D2BFBA67A00EDBC1F /* Music.wav */; };
+		1039FB232BFBA67A00EDBC1F /* SFX_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB1E2BFBA67A00EDBC1F /* SFX_4.wav */; };
+		1039FB242BFBA67A00EDBC1F /* SFX_7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB1F2BFBA67A00EDBC1F /* SFX_7.wav */; };
+		1039FB262BFBBADE00EDBC1F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB252BFBBADE00EDBC1F /* TimerView.swift */; };
+		1039FB282BFBBB8B00EDBC1F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB272BFBBB8B00EDBC1F /* Models.swift */; };
+		1039FB2C2BFBBD6400EDBC1F /* TappedEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB2B2BFBBD6400EDBC1F /* TappedEntities.swift */; };
+		1039FB4F2BFBD64300EDBC1F /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB4E2BFBD64300EDBC1F /* CircularProgressView.swift */; };
+		1043E5752BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */; };
+		1043E5772BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */; };
+		1043E5892BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */; };
 		10CD8C672BF9E234003068DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8C662BF9E234003068DC /* AppDelegate.swift */; };
 		10CD8C692BF9E234003068DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8C682BF9E234003068DC /* ContentView.swift */; };
 		10CD8C6B2BF9E235003068DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CD8C6A2BF9E235003068DC /* Assets.xcassets */; };
 		10CD8C6E2BF9E235003068DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CD8C6D2BF9E235003068DC /* Preview Assets.xcassets */; };
+		10CD8CB72BFB55E8003068DC /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 10CD8CB62BFB55E8003068DC /* FocusEntity */; };
+		10CD8CB92BFB5623003068DC /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8CB82BFB5623003068DC /* PlantModel.swift */; };
+		10CD8CBC2BFB572F003068DC /* PlacementLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8CBB2BFB572F003068DC /* PlacementLogic.swift */; };
+		10CD8CBE2BFB574A003068DC /* PlacingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8CBD2BFB574A003068DC /* PlacingView.swift */; };
+		10CD8CC12BFB578E003068DC /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8CC02BFB578E003068DC /* LayoutView.swift */; };
+		10CD8CC42BFB57FE003068DC /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8CC32BFB57FE003068DC /* CustomARView.swift */; };
+		10CD8CC62BFB581F003068DC /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD8CC52BFB581F003068DC /* ARViewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1039FB1B2BFBA67900EDBC1F /* SFX_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SFX_2.wav; sourceTree = "<group>"; };
+		1039FB1C2BFBA67900EDBC1F /* SFX_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SFX_5.wav; sourceTree = "<group>"; };
+		1039FB1D2BFBA67A00EDBC1F /* Music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Music.wav; sourceTree = "<group>"; };
+		1039FB1E2BFBA67A00EDBC1F /* SFX_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SFX_4.wav; sourceTree = "<group>"; };
+		1039FB1F2BFBA67A00EDBC1F /* SFX_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SFX_7.wav; sourceTree = "<group>"; };
+		1039FB252BFBBADE00EDBC1F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		1039FB272BFBBB8B00EDBC1F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		1039FB2B2BFBBD6400EDBC1F /* TappedEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedEntities.swift; sourceTree = "<group>"; };
+		1039FB4E2BFBD64300EDBC1F /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_03_Growth+Bloom.usdz"; sourceTree = "<group>"; };
+		1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_02_Growth+Bloom.usdz"; sourceTree = "<group>"; };
+		1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_01_Growth+Bloom.usdz"; sourceTree = "<group>"; };
 		10CD8C632BF9E234003068DC /* MagicalGardenAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicalGardenAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CD8C662BF9E234003068DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CD8C682BF9E234003068DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		10CD8C6A2BF9E235003068DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10CD8C6D2BF9E235003068DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10CD8CB82BFB5623003068DC /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
+		10CD8CBB2BFB572F003068DC /* PlacementLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementLogic.swift; sourceTree = "<group>"; };
+		10CD8CBD2BFB574A003068DC /* PlacingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacingView.swift; sourceTree = "<group>"; };
+		10CD8CC02BFB578E003068DC /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
+		10CD8CC32BFB57FE003068DC /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		10CD8CC52BFB581F003068DC /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +63,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10CD8CB72BFB55E8003068DC /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1039FB1A2BFBA66A00EDBC1F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1039FB1D2BFBA67A00EDBC1F /* Music.wav */,
+				1039FB1B2BFBA67900EDBC1F /* SFX_2.wav */,
+				1039FB1E2BFBA67A00EDBC1F /* SFX_4.wav */,
+				1039FB1C2BFBA67900EDBC1F /* SFX_5.wav */,
+				1039FB1F2BFBA67A00EDBC1F /* SFX_7.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		10CD8C5A2BF9E234003068DC = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +103,13 @@
 			children = (
 				10CD8C662BF9E234003068DC /* AppDelegate.swift */,
 				10CD8C682BF9E234003068DC /* ContentView.swift */,
+				10CD8CC52BFB581F003068DC /* ARViewContainer.swift */,
 				10CD8C6A2BF9E235003068DC /* Assets.xcassets */,
+				10CD8CBF2BFB5751003068DC /* Views */,
+				10CD8CC22BFB57E5003068DC /* Focus Entity */,
+				10CD8CBA2BFB562B003068DC /* Model */,
+				10CD8CC72BFB5EF4003068DC /* 3D Models */,
+				1039FB1A2BFBA66A00EDBC1F /* Sounds */,
 				10CD8C6C2BF9E235003068DC /* Preview Content */,
 			);
 			path = MagicalGardenAR;
@@ -65,6 +121,46 @@
 				10CD8C6D2BF9E235003068DC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10CD8CBA2BFB562B003068DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10CD8CB82BFB5623003068DC /* PlantModel.swift */,
+				1039FB272BFBBB8B00EDBC1F /* Models.swift */,
+				10CD8CBB2BFB572F003068DC /* PlacementLogic.swift */,
+				1039FB2B2BFBBD6400EDBC1F /* TappedEntities.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10CD8CBF2BFB5751003068DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10CD8CBD2BFB574A003068DC /* PlacingView.swift */,
+				10CD8CC02BFB578E003068DC /* LayoutView.swift */,
+				1039FB252BFBBADE00EDBC1F /* TimerView.swift */,
+				1039FB4E2BFBD64300EDBC1F /* CircularProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		10CD8CC22BFB57E5003068DC /* Focus Entity */ = {
+			isa = PBXGroup;
+			children = (
+				10CD8CC32BFB57FE003068DC /* CustomARView.swift */,
+			);
+			path = "Focus Entity";
+			sourceTree = "<group>";
+		};
+		10CD8CC72BFB5EF4003068DC /* 3D Models */ = {
+			isa = PBXGroup;
+			children = (
+				1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */,
+				1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */,
+				1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */,
+			);
+			path = "3D Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +179,9 @@
 			dependencies = (
 			);
 			name = MagicalGardenAR;
+			packageProductDependencies = (
+				10CD8CB62BFB55E8003068DC /* FocusEntity */,
+			);
 			productName = MagicalGardenAR;
 			productReference = 10CD8C632BF9E234003068DC /* MagicalGardenAR.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 10CD8C5A2BF9E234003068DC;
+			packageReferences = (
+				10CD8CB52BFB55E8003068DC /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = 10CD8C642BF9E234003068DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +227,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1043E5772BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz in Resources */,
 				10CD8C6E2BF9E235003068DC /* Preview Assets.xcassets in Resources */,
+				1043E5752BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz in Resources */,
+				1039FB202BFBA67A00EDBC1F /* SFX_2.wav in Resources */,
+				1043E5892BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz in Resources */,
 				10CD8C6B2BF9E235003068DC /* Assets.xcassets in Resources */,
+				1039FB232BFBA67A00EDBC1F /* SFX_4.wav in Resources */,
+				1039FB222BFBA67A00EDBC1F /* Music.wav in Resources */,
+				1039FB242BFBA67A00EDBC1F /* SFX_7.wav in Resources */,
+				1039FB212BFBA67A00EDBC1F /* SFX_5.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +247,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1039FB262BFBBADE00EDBC1F /* TimerView.swift in Sources */,
 				10CD8C692BF9E234003068DC /* ContentView.swift in Sources */,
+				10CD8CC62BFB581F003068DC /* ARViewContainer.swift in Sources */,
+				10CD8CB92BFB5623003068DC /* PlantModel.swift in Sources */,
+				10CD8CC12BFB578E003068DC /* LayoutView.swift in Sources */,
+				10CD8CBC2BFB572F003068DC /* PlacementLogic.swift in Sources */,
 				10CD8C672BF9E234003068DC /* AppDelegate.swift in Sources */,
+				10CD8CC42BFB57FE003068DC /* CustomARView.swift in Sources */,
+				10CD8CBE2BFB574A003068DC /* PlacingView.swift in Sources */,
+				1039FB282BFBBB8B00EDBC1F /* Models.swift in Sources */,
+				1039FB4F2BFBD64300EDBC1F /* CircularProgressView.swift in Sources */,
+				1039FB2C2BFBBD6400EDBC1F /* TappedEntities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10CD8CB52BFB55E8003068DC /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10CD8CB62BFB55E8003068DC /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10CD8CB52BFB55E8003068DC /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10CD8C5B2BF9E234003068DC /* Project object */;
 }
