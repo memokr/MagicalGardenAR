@@ -16,17 +16,22 @@ struct ContentView: View {
     @State private var isOnPlane: Bool = false
     @State private var isOnboardingShowing: Bool = false
     @State private var showAlert = false
+    @State private var isLoading: Bool = true
     
     var body: some View {
         NavigationStack {
             ZStack {
                 ARViewContainer(isOnPlane: $isOnPlane).edgesIgnoringSafeArea(.all)
                 
-                if self.placementLogic.selectedModel == nil {
-                    LayoutView()
-                        .environment(model)
+                if isLoading {
+                    LoadingView()
                 } else {
-                    PlacingView(isOnPlane: $isOnPlane)
+                    if self.placementLogic.selectedModel == nil {
+                        LayoutView()
+                            .environment(model)
+                    } else {
+                        PlacingView(isOnPlane: $isOnPlane)
+                    }
                 }
             }
             .toolbar {
@@ -88,6 +93,13 @@ struct ContentView: View {
                 if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
                     isOnboardingShowing = true
                 }
+                Task {
+                    if !UserDefaults.standard.bool(forKey: "hasPreloadedModels") {
+                        await preloadModels()
+                        UserDefaults.standard.set(true, forKey: "hasPreloadedModels")
+                    }
+                    isLoading = false
+                }
             }
             .sheet(isPresented: $isOnboardingShowing, content: {
                 OnboardingView(isOnboardingShowing: $isOnboardingShowing)
@@ -114,5 +126,10 @@ struct ContentView: View {
         TappedModelsManager.shared.reset()
         saveScene.reset()
         SaveSceneHelper.clearSavedScene(at: saveScene.savedUrl) 
+    }
+    func preloadModels() async {
+        for plant in model.plants {
+            _ = await plant.asyncLoadModelEntity()
+        }
     }
 }

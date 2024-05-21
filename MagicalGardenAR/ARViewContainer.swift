@@ -143,19 +143,20 @@ struct ARViewContainer: UIViewRepresentable {
         
     }
     private func playAudio(on arView: ARView, sound: String, type: String) {
-           guard let audioFileURL = Bundle.main.url(forResource: sound, withExtension: type) else {
-               print("Audio file not found")
-               return
-           }
-           
-           let audioResource = try! AudioFileResource.load(contentsOf: audioFileURL, withName: nil, inputMode: .spatial, loadingStrategy: .preload, shouldLoop: false)
-           
-           // Play audio on a specific entity or create an audio anchor
-           let audioAnchor = AnchorEntity(world: [0, 0, 0])
-           arView.scene.addAnchor(audioAnchor)
-           
-           audioAnchor.playAudio(audioResource)
-       }
+        guard let audioFileURL = Bundle.main.url(forResource: sound, withExtension: type) else {
+            print("Audio file not found")
+            return
+        }
+        
+        let audioResource = try! AudioFileResource.load(contentsOf: audioFileURL, withName: nil, inputMode: .spatial, loadingStrategy: .preload, shouldLoop: false)
+        
+        // Play audio on a specific entity or create an audio anchor
+        let audioAnchor = AnchorEntity(world: [0, 0, 0])
+        arView.scene.addAnchor(audioAnchor)
+        self.savedScene.anchorEntities.append(audioAnchor)
+        
+        audioAnchor.playAudio(audioResource)
+    }
 }
 
 
