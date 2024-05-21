@@ -121,6 +121,28 @@ class PlantModel {
         isTimerRunning = false
         totalDuration = -1 
     }
+    
+    func reset() {
+           // Invalidate and clear the timer
+           timer?.invalidate()
+           timer = nil
+           
+           // Clear UserDefaults entries
+           UserDefaults.standard.removeObject(forKey: "StartTime_\(name)")
+           UserDefaults.standard.removeObject(forKey: "Duration_\(name)")
+           UserDefaults.standard.removeObject(forKey: "TotalDuration_\(name)")
+           UserDefaults.standard.removeObject(forKey: "RemainingTime_\(name)")
+           
+           // Reset properties to initial values
+           modelEntity = nil
+           triggerAnimation = nil
+           currentlyPlayingAudio = nil
+           currentAnimation = nil
+           disableButtons = false
+           totalDuration = 0
+           remainingTime = 0
+           isTimerRunning = false
+       }
 }
 
 

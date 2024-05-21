@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var saveAlert = false
     @State private var isOnPlane: Bool = false
     @State private var isOnboardingShowing: Bool = false
+    @State private var showAlert = false
     
     var body: some View {
         NavigationStack {
@@ -62,21 +63,56 @@ struct ContentView: View {
                         }
                     }
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button{
+                        showAlert = true
+                    } label: {
+                        ZStack{
+                            Circle()
+                                .fill(Color.black.secondary)
+                                .frame(width: 44, height: 44)
+                            
+                            Image(systemName: "arrow.circlepath")
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                        }
+                    }
+                }
+            }
+            .alert("Successfully Saved Garden", isPresented: $saveAlert) {
+                      Button("OK", role: .cancel) { }
+            }
+            .onAppear {
+                self.saveScene.shouldLoadScene = true
+                TappedModelsManager.shared.loadFromUserDefaults()
+                if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
+                    isOnboardingShowing = true
+                }
+            }
+            .sheet(isPresented: $isOnboardingShowing, content: {
+                OnboardingView(isOnboardingShowing: $isOnboardingShowing)
+            })
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Reset Garden"),
+                    message: Text("Are you sure you want to reset your Garden?"),
+                    primaryButton: .destructive(Text("Reset")) {
+                        reset()
+                    },
+                    secondaryButton: .cancel()
+                )
             }
         }
-        .alert(isPresented: $saveAlert) {
-            Alert(title: Text("Successfully Saved Scene"), dismissButton: .default(Text("OK")))
+    }
+    func reset(){
+        for anchorEntity in self.saveScene.anchorEntities {
+            anchorEntity.removeFromParent()
         }
-        .onAppear {
-            self.saveScene.shouldLoadScene = true
-            TappedModelsManager.shared.loadFromUserDefaults()
-            if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
-                isOnboardingShowing = true
-            }
+        for plant in model.plants {
+            plant.reset()
         }
-        .sheet(isPresented: $isOnboardingShowing, content: {
-            OnboardingView(isOnboardingShowing: $isOnboardingShowing)
-        })
-        
+        TappedModelsManager.shared.reset()
+        saveScene.reset()
+        SaveSceneHelper.clearSavedScene(at: saveScene.savedUrl) 
     }
 }

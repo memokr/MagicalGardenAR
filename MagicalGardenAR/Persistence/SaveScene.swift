@@ -26,6 +26,20 @@ class SaveScene {
     }()
     
     var loadSceneData: Data? {
+        guard FileManager.default.fileExists(atPath: savedUrl.path) else { return nil }
         return try? Data(contentsOf: savedUrl)
+    }
+    
+    func reset() {
+        isSceneSaved = false
+        anchorEntities.removeAll()
+        shouldSaveScene = false
+        shouldLoadScene = false
+        do {
+            try FileManager.default.removeItem(at: savedUrl)
+            print("Saved file successfully deleted.")
+        } catch {
+            print("Failed to delete saved file: \(error.localizedDescription)")
+        }
     }
 }

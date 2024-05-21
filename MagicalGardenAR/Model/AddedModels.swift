@@ -37,4 +37,9 @@ class TappedModelsManager {
             addedModels = Set(modelArray)
         }
     }
+    
+    func reset() {
+        addedModels.removeAll()
+        UserDefaults.standard.removeObject(forKey: "AddedModels")
+    }
 }

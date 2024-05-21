@@ -102,7 +102,7 @@ struct ARViewContainer: UIViewRepresentable {
         // Add the anchor entity to the scene
         arView.scene.addAnchor(anchorEntity)
         
-        
+        self.savedScene.anchorEntities.append(anchorEntity)
         
         print("Added entity to the scene \(entity.name)")
     }

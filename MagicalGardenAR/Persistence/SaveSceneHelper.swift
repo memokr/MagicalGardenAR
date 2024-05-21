@@ -9,11 +9,10 @@ import Foundation
 import RealityKit
 import ARKit
 
-class SaveSceneHelper {
+class SaveSceneHelper{
     
     class func saveScene(for arView: CustomARView, at savedUrl: URL){
         print("Save scene to filesystem")
-        
         
         //Get current worldMap for arView.session
         
@@ -60,6 +59,15 @@ class SaveSceneHelper {
         newConfig.initialWorldMap = worldMap
         arView.session.run(newConfig, options: [.resetTracking, .removeExistingAnchors])
     }
+    
+    class func clearSavedScene(at savedUrl: URL) {
+          do {
+              try FileManager.default.removeItem(at: savedUrl)
+              print("Saved scene cleared from filesystem")
+          } catch {
+              print("Failed to clear saved scene: \(error.localizedDescription)")
+          }
+      }
     
 }
 
