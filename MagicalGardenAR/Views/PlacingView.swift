@@ -29,7 +29,9 @@ struct PlacingView: View {
                     
                     if let selectedModel = self.placementLogic.selectedModel {
                         selectedModel.startTimer()
+                        TappedModelsManager.shared.addModel(selectedModel.name)
                         print(selectedModel.name)
+                        selectedModel.disableButtons = true 
                     }
                     
                     let modelAnchor = ModelAnchor(model: self.placementLogic.selectedModel!, anchor: nil)

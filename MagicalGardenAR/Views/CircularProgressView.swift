@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CircularProgressView: View {
-    @State var remainingSeconds: Int
-    @State var totalDuration: Int
+    var remainingSeconds: Int
+    var totalDuration: Int
     
     var body: some View {
         ZStack {
@@ -31,11 +31,6 @@ struct CircularProgressView: View {
                 .rotationEffect(.degrees(-90))
                 .animation(.easeOut, value: calculateProgress())
 
-        }
-        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-            if remainingSeconds > 0 {
-                remainingSeconds -= 1
-            }
         }
     }
     func calculateProgress() -> Double {

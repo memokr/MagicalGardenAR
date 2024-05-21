@@ -12,6 +12,8 @@ struct LayoutView: View {
     @Environment(PlacementLogic.self) private var placementLogic
     @Environment(Models.self) private var model
     
+//    @State private var disableButtons: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
@@ -44,8 +46,14 @@ struct LayoutView: View {
                                         .clipShape(Circle())
                                         .frame(width: 70)
                                         .shadow(radius: 10)
+                                        .opacity(model.disableButtons ? 0.5 : 1.0)
                                 }
                             }
+                            .disabled(model.disableButtons)
+                        }
+                    }.onAppear{
+                        if TappedModelsManager.shared.containsModel(model.name) {
+                            model.disableButtons = true
                         }
                     }
                 }
@@ -55,7 +63,7 @@ struct LayoutView: View {
 }
 
 #Preview {
-    LayoutView(refresh: .constant(false))
+    LayoutView()
         .environment(PlacementLogic())
         .environment(Models())
 }

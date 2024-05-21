@@ -15,6 +15,7 @@ struct ARViewContainer: UIViewRepresentable {
     
     @Environment(PlacementLogic.self) private var placementLogic
     @Environment(Models.self) private var model
+    @Environment(SaveScene.self) private var savedScene
     
     @Binding var isOnPlane: Bool
     
@@ -32,6 +33,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         self.placementLogic.sceneObserver = arView.scene.subscribe(to: SceneEvents.Update.self, { (event) in
             self.updateScene(for: arView)
+            self.handleSave(for: arView)
         })
         
         // Adding the coaching overlay on the AR View
@@ -80,14 +82,15 @@ struct ARViewContainer: UIViewRepresentable {
             modelEntity.name = modelAnchor.model.name
             
             
-            if let transform = getTransformForPlacement(in: arView) {
+            if let anchor = modelAnchor.anchor {
+                // Anchor is being loaded for persistence scene
+                self.place(modelEntity, for: anchor, in: arView)
+            } else if let transform = getTransformForPlacement(in: arView) {
                 let anchorName = anchorNamePrefix + modelAnchor.model.name
                 let anchor = ARAnchor(name: anchorName, transform: transform)
                 self.place(modelEntity, for: anchor, in: arView)
                 arView.session.add(anchor: anchor)
             }
-            
-            
         }
     }
     private func place(_ entity: Entity, for anchor: ARAnchor, in arView: ARView) {
@@ -245,5 +248,40 @@ extension ARViewContainer {
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
+    }
+}
+
+
+extension ARViewContainer {
+    private func updateAvailability(for arView: ARView) {
+        guard let currentFrame = arView.session.currentFrame else {
+            print("ARFrame not available")
+            return
+        }
+        
+        switch currentFrame.worldMappingStatus {
+        case .extending, .mapped:
+            self.savedScene.isSceneSaved = !self.savedScene.anchorEntities.isEmpty
+        default:
+            self.savedScene.isSceneSaved = false
+        }
+    }
+    
+    private func handleSave(for arView: CustomARView) {
+        if self.savedScene.shouldSaveScene {
+            SaveSceneHelper.saveScene(for: arView, at: self.savedScene.savedUrl)
+            self.savedScene.shouldSaveScene = false
+        } else if self.savedScene.shouldLoadScene {
+            guard let sceneData = self.savedScene.loadSceneData else {
+                print("Unable to retrieve scenePersistenceData. Canceled loadScene operation")
+                self.savedScene.shouldLoadScene = false
+                return
+            }
+            
+            SaveSceneHelper.loadScene(for: arView, with: sceneData)
+            self.savedScene.anchorEntities.removeAll(keepingCapacity: true)
+            self.model.clearModelEntitiesFromMemory()
+            self.savedScene.shouldLoadScene = false
+        }
     }
 }

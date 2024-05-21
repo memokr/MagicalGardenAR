@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @Environment(PlacementLogic.self) private var placementLogic
     @Environment(Models.self) private var model
+    @Environment(SaveScene.self) private var saveScene
     
+    @State private var saveAlert = false
     @State private var isOnPlane: Bool = false
     
     var body: some View {
@@ -25,6 +27,34 @@ struct ContentView: View {
                     PlacingView(isOnPlane: $isOnPlane)
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button{
+                        print("Save")
+                        self.saveScene.shouldSaveScene = true
+                        TappedModelsManager.shared.saveToUserDefaults()
+                        saveAlert = true
+                    } label: {
+                        ZStack{
+                            Circle()
+                                .fill(Color.black.secondary)
+                                .frame(width: 44, height: 44)
+                            
+                            Image(systemName: "square.and.arrow.down.fill")
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                        }
+                    }
+                }
+            }
         }
+        .alert(isPresented: $saveAlert) {
+            Alert(title: Text("Successfully Saved Scene"), dismissButton: .default(Text("OK")))
+        }
+        .onAppear {
+            self.saveScene.shouldLoadScene = true
+            TappedModelsManager.shared.loadFromUserDefaults()
+        }
+        
     }
 }

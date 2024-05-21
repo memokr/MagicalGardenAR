@@ -11,8 +11,8 @@ import SwiftUI
 import RealityKit
 import Combine
 
-
-class PlantModel: ObservableObject {
+@Observable
+class PlantModel {
     var name: String
     var placeholder: String
     var modelEntity: Entity?
@@ -20,14 +20,19 @@ class PlantModel: ObservableObject {
     var sound: String
     var currentlyPlayingAudio: AudioPlaybackController?
     var currentAnimation: AnimationPlaybackController?
-    @Published var totalDuration = 0
+    var disableButtons: Bool = false
+    var totalDuration: Int {
+         didSet {
+             UserDefaults.standard.set(totalDuration, forKey: "TotalDuration_\(name)")
+         }
+     }
     
-    @Published var remainingTime: Int {
+    var remainingTime: Int {
         didSet {
             UserDefaults.standard.set(remainingTime, forKey: "RemainingTime_\(name)")
         }
     }
-    @Published var isTimerRunning: Bool = false
+    var isTimerRunning: Bool = false
     
     private var timer: Timer?
 
@@ -42,10 +47,14 @@ class PlantModel: ObservableObject {
         
         let savedStartTime = UserDefaults.standard.double(forKey: "StartTime_\(name)")
         let savedDuration = UserDefaults.standard.integer(forKey: "Duration_\(name)")
+        self.totalDuration = UserDefaults.standard.integer(forKey: "TotalDuration_\(name)")
            
         if savedStartTime > 0 && savedDuration > 0 {
             let elapsedTime = Int(Date().timeIntervalSince1970) - Int(savedStartTime)
             self.remainingTime = max(savedDuration - elapsedTime, 0)
+            if self.remainingTime > 0 {
+                self.startTimer()
+            }
         } else {
             self.remainingTime = 0
         }
@@ -75,12 +84,12 @@ class PlantModel: ObservableObject {
          
          if remainingTime == 0 {
              remainingTime = Int.random(in: 30...180)
+             totalDuration = remainingTime
          }
          
         print("Timer start with \(remainingTime)")
-         isTimerRunning = true
-        
-        totalDuration = remainingTime 
+        isTimerRunning = true
+    
          
          // Save start time and duration to UserDefaults
          let startTime = Date().timeIntervalSince1970
