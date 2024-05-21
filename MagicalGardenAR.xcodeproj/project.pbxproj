@@ -19,6 +19,7 @@
 		1039FB522BFC623400EDBC1F /* SaveSceneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB512BFC623400EDBC1F /* SaveSceneHelper.swift */; };
 		1039FB542BFC628800EDBC1F /* SaveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB532BFC628800EDBC1F /* SaveScene.swift */; };
 		1039FB562BFC6C0C00EDBC1F /* AddedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB552BFC6C0C00EDBC1F /* AddedModels.swift */; };
+		1039FB632BFD249200EDBC1F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB622BFD249200EDBC1F /* OnboardingView.swift */; };
 		1043E5752BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */; };
 		1043E5772BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */; };
 		1043E5892BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */; };
@@ -48,6 +49,7 @@
 		1039FB512BFC623400EDBC1F /* SaveSceneHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSceneHelper.swift; sourceTree = "<group>"; };
 		1039FB532BFC628800EDBC1F /* SaveScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveScene.swift; sourceTree = "<group>"; };
 		1039FB552BFC6C0C00EDBC1F /* AddedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedModels.swift; sourceTree = "<group>"; };
+		1039FB622BFD249200EDBC1F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_03_Growth+Bloom.usdz"; sourceTree = "<group>"; };
 		1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_02_Growth+Bloom.usdz"; sourceTree = "<group>"; };
 		1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_01_Growth+Bloom.usdz"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				10CD8CC02BFB578E003068DC /* LayoutView.swift */,
 				1039FB252BFBBADE00EDBC1F /* TimerView.swift */,
 				1039FB4E2BFBD64300EDBC1F /* CircularProgressView.swift */,
+				1039FB622BFD249200EDBC1F /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				10CD8CBE2BFB574A003068DC /* PlacingView.swift in Sources */,
 				1039FB282BFBBB8B00EDBC1F /* Models.swift in Sources */,
 				1039FB4F2BFBD64300EDBC1F /* CircularProgressView.swift in Sources */,
+				1039FB632BFD249200EDBC1F /* OnboardingView.swift in Sources */,
 				1039FB562BFC6C0C00EDBC1F /* AddedModels.swift in Sources */,
 				1039FB2C2BFBBD6400EDBC1F /* TappedEntities.swift in Sources */,
 			);

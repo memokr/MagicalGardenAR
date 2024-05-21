@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+
 @main
 struct AppDelegate: App {
     @State private var placementLogic = PlacementLogic()

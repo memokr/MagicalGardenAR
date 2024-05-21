@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State private var saveAlert = false
     @State private var isOnPlane: Bool = false
+    @State private var isOnboardingShowing: Bool = true
     
     var body: some View {
         NavigationStack {
@@ -46,6 +47,21 @@ struct ContentView: View {
                         }
                     }
                 }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button{
+                        isOnboardingShowing = true
+                    } label: {
+                        ZStack{
+                            Circle()
+                                .fill(Color.black.secondary)
+                                .frame(width: 44, height: 44)
+                            
+                            Image(systemName: "info.circle")
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                        }
+                    }
+                }
             }
         }
         .alert(isPresented: $saveAlert) {
@@ -54,7 +70,13 @@ struct ContentView: View {
         .onAppear {
             self.saveScene.shouldLoadScene = true
             TappedModelsManager.shared.loadFromUserDefaults()
+            if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
+                isOnboardingShowing = true
+            }
         }
+        .sheet(isPresented: $isOnboardingShowing, content: {
+            OnboardingView(isOnboardingShowing: $isOnboardingShowing)
+        })
         
     }
 }
