@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @State private var saveAlert = false
     @State private var isOnPlane: Bool = false
-    @State private var isOnboardingShowing: Bool = true
+    @State private var isOnboardingShowing: Bool = false
     
     var body: some View {
         NavigationStack {

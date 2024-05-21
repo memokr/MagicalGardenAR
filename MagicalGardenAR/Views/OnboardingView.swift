@@ -64,7 +64,6 @@ struct OnboardingView: View {
                 .opacity(currentTab == 0 ? 1 : 0)
                 .animation(.easeInOut)
                 
-                
                 // 2 VIEW
                 createPage(title: "1. Getting Started", description: "*Choose Your Plant*: You will have access to three buttons, each representing a unique type of magical plant. Tap any button to enter the placing mode for that specific plant.", imageName: "Buttons", currentTab: $currentTab, tabIndex: 1)
                 
@@ -122,7 +121,7 @@ struct OnboardingView: View {
                     
                     Button{
                         isOnboardingShowing = false
-                        UserDefaults.standard.set(false, forKey: "hasCompletedOnboarding")
+                        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
                     } label: {
                         ZStack{
                             Rectangle()
