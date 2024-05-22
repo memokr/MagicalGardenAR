@@ -12,6 +12,8 @@ import ARKit
 class SaveSceneHelper{
     
     class func saveScene(for arView: CustomARView, at savedUrl: URL){
+        let alertManager = AlertManager.shared
+
         print("Save scene to filesystem")
         
         //Get current worldMap for arView.session
@@ -19,6 +21,7 @@ class SaveSceneHelper{
         arView.session.getCurrentWorldMap { worldMap, error in
             
             guard let map = worldMap else {
+                alertManager.triggerAlert(with: "Can't save the world from this position, please move a little and try again!")
                 print("Error to get the worldMap: \(error!.localizedDescription)")
                 return
             }
@@ -70,4 +73,5 @@ class SaveSceneHelper{
       }
     
 }
+
 

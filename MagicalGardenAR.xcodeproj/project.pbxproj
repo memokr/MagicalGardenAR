@@ -21,6 +21,9 @@
 		1039FB562BFC6C0C00EDBC1F /* AddedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB552BFC6C0C00EDBC1F /* AddedModels.swift */; };
 		1039FB632BFD249200EDBC1F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB622BFD249200EDBC1F /* OnboardingView.swift */; };
 		1039FB672BFD461800EDBC1F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB662BFD461800EDBC1F /* LoadingView.swift */; };
+		1039FB692BFDB7A400EDBC1F /* SFX_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB682BFDB7A400EDBC1F /* SFX_3.wav */; };
+		1039FB6B2BFDB7E600EDBC1F /* SFX_6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1039FB6A2BFDB7E600EDBC1F /* SFX_6.wav */; };
+		1039FB6D2BFDE18300EDBC1F /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039FB6C2BFDE18300EDBC1F /* AlertManager.swift */; };
 		1043E5752BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */; };
 		1043E5772BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */; };
 		1043E5892BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */; };
@@ -52,6 +55,9 @@
 		1039FB552BFC6C0C00EDBC1F /* AddedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedModels.swift; sourceTree = "<group>"; };
 		1039FB622BFD249200EDBC1F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1039FB662BFD461800EDBC1F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1039FB682BFDB7A400EDBC1F /* SFX_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SFX_3.wav; sourceTree = "<group>"; };
+		1039FB6A2BFDB7E600EDBC1F /* SFX_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SFX_6.wav; sourceTree = "<group>"; };
+		1039FB6C2BFDE18300EDBC1F /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		1043E5742BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_03_Growth+Bloom.usdz"; sourceTree = "<group>"; };
 		1043E5762BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_02_Growth+Bloom.usdz"; sourceTree = "<group>"; };
 		1043E5882BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Plant_01_Growth+Bloom.usdz"; sourceTree = "<group>"; };
@@ -85,9 +91,11 @@
 			children = (
 				1039FB1D2BFBA67A00EDBC1F /* Music.wav */,
 				1039FB1B2BFBA67900EDBC1F /* SFX_2.wav */,
+				1039FB682BFDB7A400EDBC1F /* SFX_3.wav */,
 				1039FB1E2BFBA67A00EDBC1F /* SFX_4.wav */,
 				1039FB1C2BFBA67900EDBC1F /* SFX_5.wav */,
 				1039FB1F2BFBA67A00EDBC1F /* SFX_7.wav */,
+				1039FB6A2BFDB7E600EDBC1F /* SFX_6.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1039FB512BFC623400EDBC1F /* SaveSceneHelper.swift */,
+				1039FB6C2BFDE18300EDBC1F /* AlertManager.swift */,
 				1039FB532BFC628800EDBC1F /* SaveScene.swift */,
 			);
 			path = Persistence;
@@ -250,8 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1039FB692BFDB7A400EDBC1F /* SFX_3.wav in Resources */,
 				1043E5772BFB830C00C44D6D /* Plant_02_Growth+Bloom.usdz in Resources */,
 				10CD8C6E2BF9E235003068DC /* Preview Assets.xcassets in Resources */,
+				1039FB6B2BFDB7E600EDBC1F /* SFX_6.wav in Resources */,
 				1043E5752BFB830600C44D6D /* Plant_03_Growth+Bloom.usdz in Resources */,
 				1039FB202BFBA67A00EDBC1F /* SFX_2.wav in Resources */,
 				1043E5892BFB8D6A00C44D6D /* Plant_01_Growth+Bloom.usdz in Resources */,
@@ -278,6 +289,7 @@
 				10CD8CB92BFB5623003068DC /* PlantModel.swift in Sources */,
 				10CD8CC12BFB578E003068DC /* LayoutView.swift in Sources */,
 				1039FB522BFC623400EDBC1F /* SaveSceneHelper.swift in Sources */,
+				1039FB6D2BFDE18300EDBC1F /* AlertManager.swift in Sources */,
 				10CD8CBC2BFB572F003068DC /* PlacementLogic.swift in Sources */,
 				10CD8C672BF9E234003068DC /* AppDelegate.swift in Sources */,
 				10CD8CC42BFB57FE003068DC /* CustomARView.swift in Sources */,

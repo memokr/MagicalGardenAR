@@ -10,7 +10,7 @@ import SwiftUI
 struct PlacingView: View {
     @Environment(PlacementLogic.self) private var placementLogic
     @Binding var isOnPlane: Bool
-    
+    @State private var trigger = false
     
     var body: some View {
         VStack{
@@ -26,6 +26,7 @@ struct PlacingView: View {
                 
                 PlacingButton(systemIcon: "checkmark.circle.fill"){
                     print("Confirm Button Pressed")
+                    trigger.toggle()
                     
                     if let selectedModel = self.placementLogic.selectedModel {
                         selectedModel.startTimer()
@@ -41,6 +42,7 @@ struct PlacingView: View {
                 .disabled(isOnPlane ? false : true )
                 .opacity(isOnPlane ? 1 : 0)
                 .animation(.easeInOut)
+                .sensoryFeedback(.success, trigger: trigger)
                 Spacer()
             }
             .padding()

@@ -72,8 +72,6 @@ struct ARViewContainer: UIViewRepresentable {
                 }
             }
         }
-        
-        
     }
     
     private func addModelToScene(arView: CustomARView){
@@ -129,7 +127,7 @@ struct ARViewContainer: UIViewRepresentable {
         guard let triggerCall = plant.triggerAnimation else {return}
         
         if triggerCall{
-            guard let audioFileURL = Bundle.main.url(forResource: "SFX_2", withExtension: "wav") else {
+            guard let audioFileURL = Bundle.main.url(forResource: plant.callingSound, withExtension: "wav") else {
                 print("Audio file not found")
                 return
             }

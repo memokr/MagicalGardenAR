@@ -14,7 +14,7 @@ struct AppDelegate: App {
     @State private var placementLogic = PlacementLogic()
     @State private var model = Models()
     @State private var savedScene = SaveScene()
-    
+    let alertManager = AlertManager.shared
     
     var body: some Scene {
         WindowGroup {
@@ -22,6 +22,7 @@ struct AppDelegate: App {
                 .environment(placementLogic)
                 .environment(model)
                 .environment(savedScene)
+                .environmentObject(alertManager)
         }
     }
 }

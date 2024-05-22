@@ -11,7 +11,8 @@ struct ContentView: View {
     @Environment(PlacementLogic.self) private var placementLogic
     @Environment(Models.self) private var model
     @Environment(SaveScene.self) private var saveScene
-    
+    @EnvironmentObject var alertManager: AlertManager
+
     @State private var saveAlert = false
     @State private var isOnPlane: Bool = false
     @State private var isOnboardingShowing: Bool = false
@@ -87,6 +88,9 @@ struct ContentView: View {
             .alert("Successfully Saved Garden", isPresented: $saveAlert) {
                       Button("OK", role: .cancel) { }
             }
+            .alert(alertManager.errorMessage, isPresented: $alertManager.showAlert) {
+                        Button("OK", role: .cancel) { }
+                    }
             .onAppear {
                 self.saveScene.shouldLoadScene = true
                 TappedModelsManager.shared.loadFromUserDefaults()

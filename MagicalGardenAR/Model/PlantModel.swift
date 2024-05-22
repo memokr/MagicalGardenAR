@@ -21,6 +21,7 @@ class PlantModel {
     var currentlyPlayingAudio: AudioPlaybackController?
     var currentAnimation: AnimationPlaybackController?
     var disableButtons: Bool = false
+    var callingSound: String
     var totalDuration: Int {
          didSet {
              UserDefaults.standard.set(totalDuration, forKey: "TotalDuration_\(name)")
@@ -40,10 +41,11 @@ class PlantModel {
     var onTimerEnd: (() -> Void)?
     
     
-    init(name: String, placeholder: String, sound: String) {
+    init(name: String, placeholder: String, sound: String, callingSound: String) {
         self.name = name
         self.placeholder = placeholder
         self.sound = sound
+        self.callingSound = callingSound
         
         let savedStartTime = UserDefaults.standard.double(forKey: "StartTime_\(name)")
         let savedDuration = UserDefaults.standard.integer(forKey: "Duration_\(name)")
